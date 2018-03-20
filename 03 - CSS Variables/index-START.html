@@ -5,25 +5,43 @@
   <title>Scoped CSS Variables and JS</title>
 </head>
 <body>
-  <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
+  <div class="site-wrapper">
+    <div class="variables-box">
+      <h2>Update CSS Variables with <span class='hl'>JS</span></h2>
 
-  <div class="controls">
-    <label for="spacing">Spacing:</label>
-    <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+      <div class="controls">
+        <div class="slides-wrapper">
+        <label for="spacing">Spacing:</label>
+        <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
 
-    <label for="blur">Blur:</label>
-    <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+        <label for="blur">Blur:</label>
+        <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
 
-    <label for="brightness">Brightness</label>
-    <input id="brightness" type="range" name="brightness" min="0" max="10" value="5" data-sizing="px">
+        <label for="brightness">Brightness</label>
+        <input id="brightness" type="range" min="0" max="1" value="0.5" name="brightness" step="0.1">
+        </div>
+        <div class="colors-wrapper">
+          <label for="base">Base Color</label>
+          <input id="base" type="color" name="base" value="#ff202f">
 
-    <label for="base">Base Color</label>
-    <input id="base" type="color" name="base" value="#ff202f">
-  </div>
+          <label for="second-color">Font Color</label>
+          <input id="second-color" type="color" name="second-color" value="black">
+        </div>
 
-  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+        <div class="colors-wrapper">
+          <label for="gradient-color-1">Gradint 1</label>
+          <input id="gradient-color-1" type="color" name="gradient-color-1" value="#CFDEF3">
 
-  <style>
+          <label for="gradient-color-2">Gradint 2</label>
+          <input id="gradient-color-2" type="color" name="gradient-color-2" value="#00b09b">
+        </div>
+
+      </div>
+    </div>
+
+    <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+
+    <style>
 
     /*
       misc styles, nothing to do with CSS variables
@@ -32,17 +50,20 @@
 
       :root {
         --base: #ff202f;
+        --gradient-color-1: #CFDEF3;
+        --gradient-color-2: #E0EAFC;
+        --second-color: #BADA55;
         --spacing: 10px;
-        --blur: 10px;
-        --brightness: 10px;
+        --blur: 5px;
+        --brightness:1;
 
       }
 
       img {
         padding: var(--spacing);
         background: var(--base);
-        filter: blur(var(--blur));
-        filter: brightness(var--brightness);
+        filter: blur(var(--blur)) brightness(var(--brightness));
+        margin: 50px;
       }
 
       .hl {
@@ -52,16 +73,37 @@
 
       body {
         text-align: center;
-        background: -webkit-linear-gradient(to right, #53346D, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #53346D, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-        color: white;
+        background: -webkit-linear-gradient(to right, var(--gradient-color-1), var(--gradient-color-2));
+        background: linear-gradient(to right, var(--gradient-color-1), var(--gradient-color-2)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        color: var(--second-color);
         font-family: 'helvetica neue', sans-serif;
         font-weight: 100;
-        font-size: 50px;
+        font-size: 20px;
+      }
+
+
+      .colors-wrapper,.slides-wrapper {
+        padding: 30px;
+      }
+
+      .slides-wrapper {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .site-wrapper {
+        display: flex;
       }
 
       .controls {
         margin-bottom: 50px;
+      }
+
+      .variables-box {
+        background: white;
+        padding: 22px;
+        /* width: 60%; */
+        margin: 28px 0 36px 40px;
       }
 
       input {
@@ -70,26 +112,16 @@
     </style>
 
     <script>
-
       const inputs = document.querySelectorAll('.controls input');
 
       function handleUpdate() {
-        console.log(this.value)
-        console.log(this.name);
         const suffix = this.dataset.sizing || '';
         document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
-
-
-
-
       }
 
       inputs.forEach(input => input.addEventListener('change', handleUpdate));
-      inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
-
-
 
     </script>
-
-  </body>
-  </html>
+  </div>
+</body>
+</html>
