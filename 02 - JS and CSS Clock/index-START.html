@@ -5,13 +5,14 @@
   <title>JS + CSS Clock</title>
 </head>
 <body>
-  <div class="title">Time is not measured by clocks,<br> but by Moments... with JS ;-)</div>
+  <div class="title">Time is not measured by clocks,<br> but by Moments... <small> <small>with JS ;-)</small></small></div>
 
   <div class="clock">
     <div class="clock-face">
       <div class="hand hour-hand"></div>
-      <div class="hand min-hand"></div>
       <div class="hand second-hand"></div>
+      <div class="hand min-hand"></div>
+      <div id="clock-inner-dot"></div>
     </div>
   </div>
 
@@ -48,18 +49,23 @@
   .clock {
     width: 30rem;
     height: 30rem;
-    border:50px -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);
-
+    border: 30px solid #f4f4f4;
     border-radius:50%;
     margin:50px auto;
     position: relative;
     padding:2rem;
-    box-shadow:
-    0 0 0 4px rgba(0,0,0,0.1),
-    inset 0 0 0 3px #EFEFEF,
-    inset 0 0 10px black,
-    0 0 10px rgba(0,0,0,0.2);
   }
+
+  #clock-inner-dot {
+    position: absolute;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    background: white;
+    left: 47%;
+    bottom: 45%;
+  }
+
 
   .clock-face {
     position: relative;
@@ -79,13 +85,21 @@
   }
 
   .hour-hand {
+    left: 52px;
+    width: 30%;
     height: 8px;
+
   }
 
   .min-hand {
-    height: 8px;
-
+    left: 14px;
+    width: 45%;
   }
+
+  .second-hand {
+   background: #D2273B;
+   height: 4px;
+ }
 
 
 </style>
