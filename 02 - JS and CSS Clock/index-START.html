@@ -7,6 +7,7 @@
 <body>
   <div class="title"><span class="header"> Moments with JavaScript... </span> <br>
     Time is not measured by clocks<br> but by Moments... </div>
+    <!-- I like this version better -->
 
     <div class="clock">
       <div class="clock-face">
@@ -17,8 +18,7 @@
       </div>
     </div>
 
-
-    <style>
+<style>
     @import url('https://fonts.googleapis.com/css?family=Arimo|Pacifico');
     html {
       background: #7b4397;  /*fallback*/
@@ -108,6 +108,7 @@
 
 
  </style>
+
  <script>
   hourHand = document.querySelector('.hour-hand');
   minHand = document.querySelector('.min-hand');
@@ -121,13 +122,12 @@
 
     const minutes = now.getMinutes();
     const minutesDegrees = ((minutes / 60) * 360) + 90;
+        console.log(minutesDegrees);
     minHand.style.transform = `rotate(${minutesDegrees}deg)`;
 
     const hours = now.getHours();
     const hoursDegrees = ((hours / 12) * 360) + 90;
     hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
-
-
   }
 
 
