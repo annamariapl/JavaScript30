@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Calendar - variations to FlexPanels </title>
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <style>
+  @import url('https://fonts.googleapis.com/css?family=Kalam|Marck+Script|Pacifico|Playfair+Display|Raleway');
+  html {
+    box-sizing: border-box;
+    background-image:url(https://images.pexels.com/photos/325044/pexels-photo-325044.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-size: cover;
+    min-height: 100vh;
+    font-family:'helvetica neue';
+    font-size: 20px;
+    font-weight: 200;
+  }
+
+  body {
+    margin: 0;
+  }
+
+
+
+  .title {
+    color: #ff202f;
+    font-size: 170%;
+    font-family: Raleway;
+  }
+
+  .span-text-lighter {
+    font-weight: lighter;
+    font-family: Pacifico;
+    font-size: 60%;
+  }
+
+  .panels {
+    width: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    justify-content: end;
+  }
+
+  .panel,.day-names {
+    background:#6B0F9C;
+    box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
+    color:white;
+    text-align: center;
+    align-items:center; 
+    transition:
+    font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    background 0.2s;
+    font-size: 20px;
+    background-size:cover;
+    background-position:center;
+    flex: 1;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+    width: 0;
+  }
+
+  .day-names {
+    font-size: 80%;
+    height: 40px;
+  }
+
+  .panel:hover {
+    background: rgba(255, 32, 47,0.3);
+  }
+
+  .active {
+    min-width: 40%;
+    min-height: 70px; /*panel height= 70px*/
+    height: 100%;
+    background: rgba(255, 32, 47,0.3);
+    text-shadow: 2px 2px 2px #6B0F9C;
+    font-weight: lighter;
+    font-size: 110%;
+  }
+
+  .wrapper {
+   margin-top: 16vh;
+   padding-left: 0;
+   padding-right: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;  
+ }
+
+ .panel > *:nth-child(2) { 
+  transform: translateY(-100%);
+  width: 70px;
+}
+.panel.open-active > *:nth-child(2) { 
+  transform: translateY(0);
+  padding: 15px; 
+  width: 100%;
+}
+
+.panel.open-active > *:nth-child(1) { 
+  transform: translateY(-100vh); 
+  padding: 15px; 
+}
+
+.panel > *:nth-child(1) { 
+  position: absolute; 
+}
+</style>
+
+<div class="wrapper">
+  <div class="title"><h2>100 Gründe <span class="span-text-lighter">warum ich dich so gerne mag</span> </h2></div>
+
+  <div class="panels">
+
+    <div class="panel panel1">
+      <div>1</div>
+      <div> weil du Lustig bist</div>
+    </div>
+
+    <div class="panel panel1">
+      <div>2</div>
+      <div>weil du mein Tee, meine wäsche machst</div>
+    </div>
+
+    <div class="panel panel1">
+      <div>3</div>
+      <div> weil du mir immer verziehst</div>
+    </div>
+
+    <div class="panel panel1">
+     <div>4</div>
+     <div> weil </div> 
+   </div>
+
+   <div class="panel panel1">
+     <div>5</div>
+     <div> weil </div>
+   </div>
+
+   <div class="panel panel1">
+    <div>6</div>
+    <div> weil </div>
+  </div>
+  <div class="panel panel1">
+    <div>7</div>
+    <div> weil </div>
+  </div>
+</div>
+
+<div class="panels">
+
+  <div class="panel panel1">
+   <div>8</div>
+   <div> weil </div>
+ </div>
+
+ <div class="panel">
+  <div>9</div>
+  <div> weil </div>
+</div>
+<div class="panel">
+ <div>10</div>
+ <div> weil </div>
+</div>
+
+<div class="panel">
+  <div>11</div>
+  <div> weil </div>
+</div>
+<div class="panel">
+  <div>12</div>
+  <div> weil </div>
+</div>
+<div class="panel">
+ <div>13</div>
+ <div> weil </div>
+</div>
+<div class="panel">
+ <div>14 
+ </div>    
+</div>
+
+
+<div class="panels">
+
+  <div class="panel">
+   15
+ </div>
+
+ <div class="panel">
+  16
+</div>
+<div class="panel">
+  17
+</div>
+<div class="panel">
+ 18
+</div>
+<div class="panel">
+  19
+</div>
+<div class="panel">
+ 20
+</div>
+<div class="panel">
+  21
+</div>
+</div>
+
+<div class="panels">
+  <div class="panel">
+    22
+  </div>
+  <div class="panel">
+   23
+ </div>
+ <div class="panel">
+  24
+</div>
+<div class="panel">
+ 25
+</div>
+<div class="panel">
+  26
+</div>
+<div class="panel">
+  27
+</div>
+<div class="panel">
+ 28
+</div>
+</div>
+<div class="panels">
+ <div class="panel">
+  29
+</div>
+<div class="panel">
+  30 
+</div>
+
+</div>
+
+<script>
+  const panels = document.querySelectorAll(".panel");
+
+
+
+
+  function toggleActive() {
+    this.classList.toggle("active");  
+  }
+
+  function addTextToBox(e) {
+    // console.log(e.target.classList[1]); 
+    // console.log(this);
+    // console.log(panels);
+
+    panels.forEach(panel => panel.classList.remove("active"));
+    panels.forEach(panel => panel.classList.remove("open-active"));
+    this.classList.toggle("open-active");
+  }
+
+  panels.forEach(panel => panel.addEventListener('click', addTextToBox));
+  panels.forEach(panel => panel.addEventListener('click', toggleActive));
+
+
+
+</script>
+
+</body>
+</html>
