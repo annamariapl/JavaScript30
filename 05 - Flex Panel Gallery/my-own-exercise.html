@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Flex Panels 💪</title>
+  <title> Calendar - variations to FlexPanels </title>
   <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -16,11 +16,20 @@
     font-size: 20px;
     font-weight: 200;
   }
+
   body {
     margin: 0;
   }
-  *, *:before, *:after {
-    box-sizing: inherit;
+
+
+
+  .title {
+    color: #ff202f;
+    font-size: 120%;  
+  }
+
+  .span-text-lighter {
+    font-weight: lighter;
   }
 
   .panels {
@@ -31,18 +40,12 @@
     justify-content: end;
   }
 
-  .panel:hover {
-    background: rgba(255, 32, 47,0.3);
-  }
-
-  .panel {
+  .panel,.day-names {
     background:#6B0F9C;
     box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
     color:white;
     text-align: center;
-    align-items:center;
-    /* Safari transitionend event.propertyName === flex */
-    /* Chrome + FF transitionend event.propertyName === flex-grow */
+    align-items:center; 
     transition:
     font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
     flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
@@ -57,15 +60,17 @@
     height: 70px;
   }
 
+  .panel:hover {
+    background: rgba(255, 32, 47,0.3);
+  }
+
   .active {
-    /*flex: 100%;*/
     min-width: 60%;
+    min-height: 70px; /*panel height= 70px*/
     height: 100%;
     background: rgba(255, 32, 47,0.45);
     text-shadow: 2px 2px 2px #6B0F9C;
     font-weight: lighter;
-
-
   }
 
   .wrapper {
@@ -78,80 +83,110 @@
    align-items: center;  
  }
 
- .panel > *:nth-child(2) { transform: translateY(-100%); width: 70px;}
- .panel.open-active > *:nth-child(2) { transform: translateY(0); padding: 15px; width: 100%; }
- .panel.open-active > *:nth-child(1) { transform: translateY(-100vh); padding: 15px; }
- .panel > *:nth-child(1) { position: absolute; }
-
- .title {
-  color: #ff202f;
-  font-size: 120%;  
+ .panel > *:nth-child(2) { 
+  transform: translateY(-100%);
+  width: 70px;
+}
+.panel.open-active > *:nth-child(2) { 
+  transform: translateY(0);
+  padding: 15px; 
+  width: 100%;
 }
 
-.span-text-lighter {
-  font-weight: lighter;
-
+.panel.open-active > *:nth-child(1) { 
+  transform: translateY(-100vh); 
+  padding: 15px; 
 }
 
-
+.panel > *:nth-child(1) { 
+  position: absolute; 
+}
 </style>
 
 <div class="wrapper">
   <div class="title"><h2>CALENDAR<span class="span-text-lighter">, April</span></h2></div>
+
   <div class="panels">
 
-    <div class="panel panel1">
-      <div>1</div>
-      <div> 
-        <h5>Sunday, 1 April</h5>
-        <p>12.00 Yoga </p>
-        <p>13.00 Lunch </p>
-        <p>14.00 Code wars </p>
-        <p>17.00 Freetime </p>
-      </div>
+    <div class="day-names">
+      <div>Sunday</div>
     </div>
 
-    <div class="panel panel2">
-      <div>2</div>
-      <div> 
-        <h5>2 April</h5>
-        <p>12.00 Yoga </p>
-        <p>13.00 Lunch </p>
-        <p>14.00 Code wars </p>
-        <p>17.00 Freetime </p>
-      </div>
+    <div class="day-names">
+      <div>Monday</div>
     </div>
 
-    <div class="panel panel3">
-      <div>3</div>
-      <div> 
-        <h5>3 April</h5>
-        <p>12.00 Yoga </p>
-        <p>13.00 Lunch </p>
-        <p>14.00 Code wars </p>
-        <p>17.00 Freetime </p>
-      </div>
-    </div>
+    <div class="day-names">
+     <div>Tuesday</div> 
+   </div>
 
-    <div class="panel panel4">
-     <div>4</div>
-     <div> 
-      <h5>4 April</h5>
+   <div class="day-names">
+     <div>Friday</div>
+   </div>
+
+   <div class="day-names">
+    <div>Saturday</div>
+  </div>
+</div>
+
+
+
+
+
+<div class="panels">
+
+  <div class="panel panel1">
+    <div>1</div>
+    <div> 
+      <h5>Sunday, 1 April</h5>
       <p>12.00 Yoga </p>
       <p>13.00 Lunch </p>
       <p>14.00 Code wars </p>
       <p>17.00 Freetime </p>
-    </div> 
+    </div>
   </div>
-  <div class="panel panel5">
-   <div>5</div>
+
+  <div class="panel panel2">
+    <div>2</div>
+    <div> 
+      <h5>2 April</h5>
+      <p>12.00 Yoga </p>
+      <p>13.00 Lunch </p>
+      <p>14.00 Code wars </p>
+      <p>17.00 Freetime </p>
+    </div>
+  </div>
+
+  <div class="panel panel3">
+    <div>3</div>
+    <div> 
+      <h5>3 April</h5>
+      <p>12.00 Yoga </p>
+      <p>13.00 Lunch </p>
+      <p>14.00 Code wars </p>
+      <p>17.00 Freetime </p>
+    </div>
+  </div>
+
+  <div class="panel panel4">
+   <div>4</div>
    <div> 
-    <h5>Thursday, 5 April</h5>
+    <h5>4 April</h5>
     <p>12.00 Yoga </p>
     <p>13.00 Lunch </p>
     <p>14.00 Code wars </p>
     <p>17.00 Freetime </p>
-  </div>
+  </div> 
+</div>
+<div class="panel panel5">
+ <div>5</div>
+ <div> 
+  <h5>Thursday, 5 April</h5>
+  <p>12.00 Yoga </p>
+  <p>13.00 Lunch </p>
+  <p>14.00 Code wars </p>
+  <p>17.00 Freetime </p>
+</div>
 </div>
 </div>
 
