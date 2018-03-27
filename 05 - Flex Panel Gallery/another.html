@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flex Panels 💪</title>
+  <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <style>
+  html {
+    box-sizing: border-box;
+    background-image:url(https://images.pexels.com/photos/54630/japanese-cherry-trees-flowers-spring-japanese-flowering-cherry-54630.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+    background-size: cover;
+    min-height: 100vh;
+    font-family:'helvetica neue';
+    font-size: 20px;
+    font-weight: 200;
+  }
+  body {
+    margin: 0;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  .panels {
+    width: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-evenly;
+    justify-content: end;
+  }
+
+  .panel:hover {
+    background: rgba(255, 32, 47,0.3);
+  }
+
+  .panel {
+    background:#6B0F9C;
+    box-shadow:inset 0 0 0 5px rgba(255,255,255,0.1);
+    color:white;
+    text-align: center;
+    align-items:center;
+    /* Safari transitionend event.propertyName === flex */
+    /* Chrome + FF transitionend event.propertyName === flex-grow */
+    transition:
+    font-size 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    flex 0.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+    background 0.2s;
+    font-size: 20px;
+    background-size:cover;
+    background-position:center;
+    flex: 1;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 70px;
+  }
+
+  .active {
+    /*flex: 100%;*/
+    min-width: 60%;
+    height: 100%;
+    background: rgba(255, 32, 47,0.45);
+    text-shadow: 2px 2px 2px #6B0F9C;
+    font-weight: lighter;
+
+
+  }
+
+  .wrapper {
+   margin-top: 16vh;
+   padding-left: 0;
+   padding-right: 0;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;  
+ }
+
+ .panel > *:nth-child(2) { transform: translateY(-100%); width: 70px;}
+ .panel.open-active > *:nth-child(2) { transform: translateY(0); padding: 15px; width: 100%; }
+ .panel.open-active > *:nth-child(1) { transform: translateY(-100vh); padding: 15px; }
+ .panel > *:nth-child(1) { position: absolute; }
+
+ .title {
+  color: #ff202f;
+  font-size: 120%;  
+}
+
+.span-text-lighter {
+  font-weight: lighter;
+
+}
+
+
+</style>
+
+<div class="wrapper">
+  <div class="title"><h2>CALENDAR<span class="span-text-lighter">, April</span></h2></div>
+  <div class="panels">
+
+    <div class="panel panel1">
+      <div>1</div>
+      <div> 
+        <h5>Sunday, 1 April</h5>
+        <p>12.00 Yoga </p>
+        <p>13.00 Lunch </p>
+        <p>14.00 Code wars </p>
+        <p>17.00 Freetime </p>
+      </div>
+    </div>
+
+    <div class="panel panel2">
+      <div>2</div>
+      <div> 
+        <h5>2 April</h5>
+        <p>12.00 Yoga </p>
+        <p>13.00 Lunch </p>
+        <p>14.00 Code wars </p>
+        <p>17.00 Freetime </p>
+      </div>
+    </div>
+
+    <div class="panel panel3">
+      <div>3</div>
+      <div> 
+        <h5>3 April</h5>
+        <p>12.00 Yoga </p>
+        <p>13.00 Lunch </p>
+        <p>14.00 Code wars </p>
+        <p>17.00 Freetime </p>
+      </div>
+    </div>
+
+    <div class="panel panel4">
+     <div>4</div>
+     <div> 
+      <h5>4 April</h5>
+      <p>12.00 Yoga </p>
+      <p>13.00 Lunch </p>
+      <p>14.00 Code wars </p>
+      <p>17.00 Freetime </p>
+    </div> 
+  </div>
+  <div class="panel panel5">
+   <div>5</div>
+   <div> 
+    <h5>Thursday, 5 April</h5>
+    <p>12.00 Yoga </p>
+    <p>13.00 Lunch </p>
+    <p>14.00 Code wars </p>
+    <p>17.00 Freetime </p>
+  </div>
+</div>
+</div>
+
+<div class="panels">
+  <div class="panel panel6">
+    <div>6</div>
+    <div> 
+      <h5>Friday, 6 April</h5>
+      <p>12.00 Yoga </p>
+      <p>13.00 Lunch </p>
+      <p>14.00 Code wars </p>
+      <p>17.00 Freetime </p>
+    </div>
+  </div>
+  <div class="panel panel7">
+    7
+  </div>
+  <div class="panel panel8">
+   <div>8</div>
+   <div> 
+    <h5>8 April</h5>
+    <p>12.00 Yoga </p>
+    <p>13.00 Lunch </p>
+    <p>14.00 Code wars </p>
+    <p>17.00 Freetime </p>
+  </div>
+</div>
+<div class="panel panel9">
+  9
+</div>
+<div class="panel panel10">
+ 10
+</div>
+</div>
+
+<div class="panels">
+  <div class="panel panel11">
+    11
+  </div>
+  <div class="panel panel12">
+    12
+  </div>
+  <div class="panel panel13">
+   13
+ </div>
+ <div class="panel panel14">
+  14
+</div>
+<div class="panel panel15">
+ 15
+</div>
+</div>
+
+<div class="panels">
+  <div class="panel panel16">
+    16
+  </div>
+  <div class="panel panel17">
+    17
+  </div>
+  <div class="panel panel18">
+   18
+ </div>
+ <div class="panel panel19">
+  19
+</div>
+<div class="panel panel20">
+ 20
+</div>
+</div>
+
+<div class="panels">
+  <div class="panel panel21">
+    21
+  </div>
+  <div class="panel panel22">
+    22
+  </div>
+  <div class="panel panel23">
+   23
+ </div>
+ <div class="panel panel24">
+  24
+</div>
+<div class="panel panel25">
+ 25
+</div>
+</div>
+<div class="panels">
+  <div class="panel panel26">
+    26
+  </div>
+  <div class="panel panel27">
+    27
+  </div>
+  <div class="panel panel28">
+   28
+ </div>
+ <div class="panel panel29">
+  29
+</div>
+<div class="panel panel30">
+  30 
+</div>
+</div>
+</div>
+
+<script>
+  const panels = document.querySelectorAll(".panel");
+
+
+
+
+  function toggleActive() {
+    this.classList.toggle("active");  
+  }
+
+  function addTextToBox(e) {
+    // console.log(e.target.classList[1]); 
+    // console.log(this);
+    // console.log(panels);
+
+    panels.forEach(panel => panel.classList.remove("active"));
+    panels.forEach(panel => panel.classList.remove("open-active"));
+    this.classList.toggle("open-active");
+  }
+
+  panels.forEach(panel => panel.addEventListener('click', addTextToBox));
+  panels.forEach(panel => panel.addEventListener('click', toggleActive));
+
+
+
+</script>
+
+</body>
+</html>
