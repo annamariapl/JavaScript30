@@ -58,6 +58,12 @@
     display: flex;
     flex-direction: column;
     height: 70px;
+    width: 0;
+  }
+
+  .day-names {
+    font-size: 80%;
+    height: 40px;
   }
 
   .panel:hover {
@@ -65,12 +71,13 @@
   }
 
   .active {
-    min-width: 60%;
+    min-width: 40%;
     min-height: 70px; /*panel height= 70px*/
     height: 100%;
-    background: rgba(255, 32, 47,0.45);
+    background: rgba(255, 32, 47,0.3);
     text-shadow: 2px 2px 2px #6B0F9C;
     font-weight: lighter;
+    font-size: 110%;
   }
 
   .wrapper {
@@ -109,24 +116,32 @@
   <div class="panels">
 
     <div class="day-names">
-      <div>Sunday</div>
+      <div>Sun</div>
     </div>
 
     <div class="day-names">
-      <div>Monday</div>
+      <div>Mon</div>
     </div>
 
     <div class="day-names">
-     <div>Tuesday</div> 
+     <div>Tue</div> 
    </div>
 
    <div class="day-names">
-     <div>Friday</div>
-   </div>
-
-   <div class="day-names">
-    <div>Saturday</div>
+    <div>Wed</div>
   </div>
+
+  <div class="day-names">
+   <div>Thu</div>
+ </div>
+
+ <div class="day-names">
+   <div>Fri</div>
+ </div>
+
+ <div class="day-names">
+  <div>Sat</div>
+</div>
 </div>
 
 
@@ -146,7 +161,7 @@
     </div>
   </div>
 
-  <div class="panel panel2">
+  <div class="panel panel1">
     <div>2</div>
     <div> 
       <h5>2 April</h5>
@@ -157,7 +172,7 @@
     </div>
   </div>
 
-  <div class="panel panel3">
+  <div class="panel panel1">
     <div>3</div>
     <div> 
       <h5>3 April</h5>
@@ -168,7 +183,7 @@
     </div>
   </div>
 
-  <div class="panel panel4">
+  <div class="panel panel1">
    <div>4</div>
    <div> 
     <h5>4 April</h5>
@@ -178,7 +193,8 @@
     <p>17.00 Freetime </p>
   </div> 
 </div>
-<div class="panel panel5">
+
+<div class="panel panel1">
  <div>5</div>
  <div> 
   <h5>Thursday, 5 April</h5>
@@ -188,23 +204,32 @@
   <p>17.00 Freetime </p>
 </div>
 </div>
+
+<div class="panel panel1">
+  <div>6</div>
+  <div> 
+    <h5>Friday, 6 April</h5>
+    <p>12.00 Yoga </p>
+    <p>13.00 Lunch </p>
+    <p>14.00 Code wars </p>
+    <p>17.00 Freetime </p>
+  </div>
+</div>
+<div class="panel panel1">
+  <div>7</div>
+  <div> 
+    <h5>8 April</h5>
+    <p>12.00 Yoga </p>
+    <p>13.00 Lunch </p>
+    <p>14.00 Code wars </p>
+    <p>17.00 Freetime </p>
+  </div>
+</div>
 </div>
 
 <div class="panels">
-  <div class="panel panel6">
-    <div>6</div>
-    <div> 
-      <h5>Friday, 6 April</h5>
-      <p>12.00 Yoga </p>
-      <p>13.00 Lunch </p>
-      <p>14.00 Code wars </p>
-      <p>17.00 Freetime </p>
-    </div>
-  </div>
-  <div class="panel panel7">
-    7
-  </div>
-  <div class="panel panel8">
+
+  <div class="panel panel1">
    <div>8</div>
    <div> 
     <h5>8 April</h5>
@@ -214,83 +239,97 @@
     <p>17.00 Freetime </p>
   </div>
 </div>
-<div class="panel panel9">
-  9
+
+<div class="panel">
+  <div>9</div>
+  <div> 
+    <h5>8 April</h5>
+    <p>12.00 Yoga </p>
+    <p>13.00 Lunch </p>
+    <p>14.00 Code wars </p>
+    <p>17.00 Freetime </p>
+  </div>
 </div>
-<div class="panel panel10">
+<div class="panel">
  10
 </div>
-</div>
 
-<div class="panels">
-  <div class="panel panel11">
-    11
-  </div>
-  <div class="panel panel12">
-    12
-  </div>
-  <div class="panel panel13">
-   13
- </div>
- <div class="panel panel14">
+<div class="panel">
+  11
+</div>
+<div class="panel">
+  12
+</div>
+<div class="panel">
+ 13
+</div>
+<div class="panel">
   14
-</div>
-<div class="panel panel15">
- 15
-</div>
+</div>    
 </div>
 
+
 <div class="panels">
-  <div class="panel panel16">
-    16
-  </div>
-  <div class="panel panel17">
-    17
-  </div>
-  <div class="panel panel18">
-   18
+
+  <div class="panel">
+   15
  </div>
- <div class="panel panel19">
+
+ <div class="panel">
+  16
+</div>
+<div class="panel">
+  17
+</div>
+<div class="panel">
+ 18
+</div>
+<div class="panel">
   19
 </div>
-<div class="panel panel20">
+<div class="panel">
  20
+</div>
+<div class="panel">
+  21
 </div>
 </div>
 
 <div class="panels">
-  <div class="panel panel21">
-    21
-  </div>
-  <div class="panel panel22">
+  <div class="panel">
     22
   </div>
-  <div class="panel panel23">
+  <div class="panel">
    23
  </div>
- <div class="panel panel24">
+ <div class="panel">
   24
 </div>
-<div class="panel panel25">
+<div class="panel">
  25
+</div>
+<div class="panel">
+  26
+</div>
+<div class="panel">
+  27
+</div>
+<div class="panel">
+ 28
 </div>
 </div>
 <div class="panels">
-  <div class="panel panel26">
-    26
-  </div>
-  <div class="panel panel27">
-    27
-  </div>
-  <div class="panel panel28">
-   28
- </div>
- <div class="panel panel29">
+ <div class="panel">
   29
 </div>
-<div class="panel panel30">
+<div class="panel">
   30 
 </div>
+<div class="panel"> </div>
+<div class="panel"> </div>
+<div class="panel"> </div>
+<div class="panel"> </div>
+<div class="panel"> </div>
 </div>
 </div>
 
